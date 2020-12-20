@@ -1,25 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import Layout from './components/Layout/Layout';
+import React from 'react';
+import LeftAside from './components/LeftAside/LeftAside';
+import RightAside from './components/RighAside/RightAside';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+	return (
+		<div>
+			<Layout>
+				<div className='grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-6 h-screen p-10'>
+					<aside className='col-span-1 lg:col-span-2 bg-blue-lighter h-full md:bg-cloud-image md:bg-bottom lg:bg-cloud-image bg-no-repeat bg-bottom bg-contain'>
+						<LeftAside />
+					</aside>
+					{/*Right Aside */}
+					<aside className='col-span-1 lg:col-span-4 bg-blue-dark h-full'>
+						<RightAside />
+					</aside>
+				</div>
+			</Layout>
+		</div>
+	);
+};
 
 export default App;
